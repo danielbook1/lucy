@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { authenticate } from "@/services/auth";
 
-export default function LoginPage() {
+export default function Login() {
   const router = useRouter();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -15,7 +15,7 @@ export default function LoginPage() {
     setError("");
 
     try {
-      await authenticate(username, password); // uses your auth service
+      await authenticate(username, password);
       router.push("/"); // redirect to home on success
     } catch {
       setError("Invalid username or password");
@@ -23,23 +23,26 @@ export default function LoginPage() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder="Username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-        required
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        required
-      />
-      <button type="submit">Login</button>
-      {error && <p>{error}</p>}
-    </form>
+    <>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          required
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+        <button type="submit">Login</button>
+        {error && <p>{error}</p>}
+      </form>
+      <a href="/register">Register</a>
+    </>
   );
 }
