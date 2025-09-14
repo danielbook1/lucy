@@ -23,14 +23,22 @@ export default function Login() {
   };
 
   return (
-    <>
-      <form onSubmit={handleSubmit}>
+    <div className="flex flex-col items-center justify-center mt-10 sm:mt-50">
+      <img src="/logo.svg" alt="Lucy.Team Logo" className="mb-20" />
+      <h1 className="text-black font-roboto text-[48px] font-bold leading-[63px] tracking-[-4px] text-center">
+        LOGIN
+      </h1>
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col space-y-4 my-4 w-80"
+      >
         <input
           type="text"
           placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
+          className="placeholder:font-roboto placeholder:text-sm rounded-[7px] bg-[#e4e3e3] w-full"
         />
         <input
           type="password"
@@ -38,11 +46,22 @@ export default function Login() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
+          className="placeholder:font-roboto placeholder:text-sm rounded-[7px] bg-[#e4e3e3] w-full"
         />
-        <button type="submit">Login</button>
+        <button
+          type="submit"
+          className="font-roboto font-bold rounded-[7px] bg-[#e4e3e3]"
+        >
+          Submit
+        </button>
         {error && <p>{error}</p>}
       </form>
-      <a href="/register">Register</a>
-    </>
+      <a
+        href="/register"
+        className="font-roboto font-bold rounded-[7px] bg-[#e4e3e3] w-80 text-center"
+      >
+        Sign Up
+      </a>
+    </div>
   );
 }
