@@ -38,7 +38,7 @@ export default function Login() {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
-          className="placeholder:font-roboto placeholder:text-sm rounded-[7px] bg-[#e4e3e3] w-full"
+          className="placeholder:font-roboto placeholder:text-sm rounded-[7px] bg-[#e4e3e3] w-full pl-2"
         />
         <input
           type="password"
@@ -46,7 +46,7 @@ export default function Login() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          className="placeholder:font-roboto placeholder:text-sm rounded-[7px] bg-[#e4e3e3] w-full"
+          className="placeholder:font-roboto placeholder:text-sm rounded-[7px] bg-[#e4e3e3] w-full pl-2"
         />
         <button
           type="submit"

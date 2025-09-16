@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import apiClient from "@/services/api-client";
-import { User } from "@/services/auth";
+import { User } from "@/models";
 
 export const useUser = () => {
   const [user, setUser] = useState<User | null>(null);

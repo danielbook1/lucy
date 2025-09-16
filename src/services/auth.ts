@@ -1,14 +1,5 @@
 import apiClient from "./api-client";
-
-export interface User {
-  id: string;
-  username: string;
-}
-
-export interface RegisterUser {
-  username: string;
-  password: string;
-}
+import { RegisterUser } from "@/models";
 
 export const authenticate = async (username: string, password: string) => {
   const formData = new URLSearchParams();
